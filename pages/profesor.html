@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesor</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+    <div id="myApp" style="text-align: center;">
+        <table style="margin: auto;">
+            <p style="font-weight: bolder;">Lista de Profesores</p>
+            <tr>
+                <td style="font-weight: bolder;">Materia</td>
+                <td></td>
+                <td style="font-weight: bolder;">Nombre</td>
+                <td></td>
+                <td style="font-weight: bolder;">Apellido</td>
+                <td></td>
+                <td style="font-weight: bolder;">Edad</td>
+                <td></td>
+                <td style="font-weight: bolder;">Aula</td>
+            </tr>
+            <tr v-for="{materia, nombre, apellido, edad, aula} in lista">
+                <td>{{materia}}</td>
+                <td></td>
+                <td>{{nombre}}</td>
+                <td></td>
+                <td>{{apellido}}</td>
+                <td></td>
+                <td>{{edad}}</td>
+                <td></td>
+                <td>{{aula}}</td>
+            </tr>
+        </table>
+        <br>
+        <button v-on:click="agregarEstudiante">Agregar Profesor</button>
+    </div>
+    <script src="../js/profesor.js"></script>
+</body>
+
+</html>
