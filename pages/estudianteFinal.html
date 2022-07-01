@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiante Final</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myApp">
+        <h2>Ingreso Estudiantes</h2>
+        <!--
+        <input type="text" v-model="mensaje" v-on:keypress.enter="eventoFinal">
+        <p>{{mensaje}}</p>
+        -->
+        <label for="nombre">Nombre: </label>
+        <input id="nombre" type="text" v-model="nombre">
+
+        <label for="apellido">Apellido: </label>
+        <input id="apellido" type="text" v-model="apellido">
+
+        <label for="edad">Edad: </label>
+        <input id="edad" type="text" v-model="edad">
+        <br>
+        <br>
+        <button v-on:click="agregarEstudianteF('I')">Agregar Inicio</button>
+        <button v-on:click="agregarEstudianteF('F')">Agregar Fin</button>
+        <hr>
+
+        <ul>
+            <li v-for="({nombre, apellido, edad}, index) in lista">
+                <!--
+                    v-if construye el elemento 
+                    v-show muestra el elemento 
+                -->
+                <h3 v-if="true">{{index + 1 }} - {{nombre}} - {{apellido}} - {{edad}}</h3>
+            </li>
+        </ul>
+
+
+    </div>
+
+    <script src="../js/estudianteFinal.js"></script>
+</body>
+
+</html>
