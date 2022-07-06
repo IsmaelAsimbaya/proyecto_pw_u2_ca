@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" style="text-align: center;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        label {
+            display: block;
+        }
+
+        tr {
+            border: solid;
+        }
+
+        td {
+            border: solid;
+            padding: 6px;
+        }
+
+        .tableStyle {
+            font-weight: bolder;
+            background-color: dodgerblue;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myApp" style="text-align: center;">
+        <table style="margin: auto; border: solid;">
+            <p style="font-weight: bolder;">Lista de Tareas</p>
+            <input id="tarea" type="text" v-model="tarea">
+            <button v-on:click="agregarTarea">Agregar Tarea</button>
+            <p></p>
+            <tr>
+                <td class="tableStyle">nº</td>
+                <td class="tableStyle">Descripcion</td>
+            </tr>
+            <tr v-for="({tarea},index) in lista">
+                <td class="tableStyle">{{index + 1}}</td>
+                <td>{{tarea}}</td>
+            </tr>
+        </table>
+        <br>
+
+    </div>
+    <script src="../js/tarea.js"></script>
+</body>
+
+</html>
